@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {
-      workerUrl: process.env.NUXT_PUBLIC_WORKER_URL || 'http://localhost:8787',
+      workerUrl: process.env.NUXT_PUBLIC_WORKER_URL || 'http://localhost:8101',
     },
   },
   app: {

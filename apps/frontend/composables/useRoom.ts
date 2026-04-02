@@ -1,7 +1,7 @@
-import { ref, computed, onUnmounted } from 'vue'
-import type { RoomState, Player, ServerMessage, ClientMessage, VoteResult, RoomSettings } from '@scrum-poker/shared'
+import type { ClientMessage, Player, RoomSettings, RoomState, ServerMessage, VoteResult } from '@scrum-poker/shared'
+import { computed, onUnmounted, ref } from 'vue'
 
-const STORAGE_CLIENT_ID = 'scrum-poker-client-id'
+const SESSION_CLIENT_ID = 'scrum-poker-client-id'
 const STORAGE_PLAYER_NAME = 'scrum-poker-player-name'
 
 export function useRoom(roomId: string) {
@@ -27,10 +27,10 @@ export function useRoom(roomId: string) {
 
   function initClientId() {
     if (typeof window === 'undefined') return
-    let id = localStorage.getItem(STORAGE_CLIENT_ID)
+    let id = sessionStorage.getItem(SESSION_CLIENT_ID)
     if (!id) {
       id = crypto.randomUUID()
-      localStorage.setItem(STORAGE_CLIENT_ID, id)
+      sessionStorage.setItem(SESSION_CLIENT_ID, id)
     }
     clientId.value = id
 
