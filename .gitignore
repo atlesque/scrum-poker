@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# macOS
+.DS_Store
+
+# Test and coverage output
+coverage/
+**/coverage/
+
+# Build output
+dist/
+**/dist/
+
+# Nuxt
+apps/frontend/.nuxt/
+apps/frontend/.output/
+apps/frontend/.data/
+apps/frontend/.nitro/
+
+# Wrangler / Miniflare
+apps/worker/.wrangler/
+apps/worker/.dev.vars
+apps/worker/.env
+apps/worker/.env.*
+!apps/worker/.dev.vars.example
+!apps/worker/.env.example
+!apps/worker/.env.*.example
