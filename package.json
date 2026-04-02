@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "pnpm --parallel --filter @scrum-poker/worker --filter @scrum-poker/frontend dev",
     "dev:worker": "pnpm --filter @scrum-poker/worker dev",
     "dev:frontend": "pnpm --filter @scrum-poker/frontend dev",
     "build": "pnpm --filter @scrum-poker/shared build && pnpm --filter @scrum-poker/worker build && pnpm --filter @scrum-poker/frontend build",
