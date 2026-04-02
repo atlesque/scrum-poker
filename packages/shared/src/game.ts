@@ -5,7 +5,7 @@ export function computeVoteResults(players: Player[], cards: string[]): VoteResu
   const voteCounts = new Map<string, string[]>()
 
   for (const player of players) {
-    if (!player.hasVoted || player.vote === null || player.isHost) continue
+    if (player.isHost || !player.hasVoted || player.vote === null) continue
     const existing = voteCounts.get(player.vote) || []
     existing.push(player.name)
     voteCounts.set(player.vote, existing)

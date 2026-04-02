@@ -116,7 +116,7 @@
           <div v-if="!myPlayer.isHost" class="mt-auto pt-4">
             <CardHand
               :cards="currentDeck.cards"
-              :selected-card="myPlayer.vote ?? (myPlayer.hasVoted ? '?' : null)"
+              :selected-card="myPlayer.vote"
               :disabled="roomState.revealed || roomState.phase === 'revealed'"
               @select="sendVote"
             />

@@ -48,6 +48,7 @@ function getCardStyle(index: number): Record<string, string> {
 
   return {
     transform: `translateX(${translateX}px) rotate(${angle}deg) translateY(${baseY}px)`,
+    // Pivot point far below the card creates a natural fan/arc spread
     transformOrigin: 'center 300px',
     left: `calc(50% - 36px + ${translateX}px)`,
     zIndex: isSelected ? '50' : String(index),
