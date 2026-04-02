@@ -11,10 +11,10 @@
     "@scrum-poker/shared": "workspace:*"
   },
   "devDependencies": {
-    "wrangler": "^3.60.0",
     "@cloudflare/workers-types": "^4.20240524.0",
+    "@vitest/coverage-v8": "^1.6.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0",
-    "@vitest/coverage-v8": "^1.6.0"
+    "wrangler": "^4.80.0"
   }
 }
