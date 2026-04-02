@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Card body -->
+  <rect x="3" y="2" width="26" height="28" rx="3" ry="3" fill="#ffffff" stroke="#ddd" stroke-width="1"/>
+  <!-- Spade suit (center) -->
+  <text x="16" y="21" font-family="serif" font-size="16" text-anchor="middle" fill="#1a1a1a">♠</text>
+  <!-- Top-left rank -->
+  <text x="6.5" y="11" font-family="serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#1a1a1a">A</text>
+  <!-- Bottom-right rank (rotated) -->
+  <text x="25.5" y="27" font-family="serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#1a1a1a" transform="rotate(180 25.5 23.5)">A</text>
+</svg>
