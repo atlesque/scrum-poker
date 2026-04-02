@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-02',
   ssr: false,
+  nitro: {
+    preset: 'cloudflare-pages-static',
+  },
   modules: ['@nuxtjs/tailwindcss'],
   runtimeConfig: {
     public: {

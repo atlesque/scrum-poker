@@ -6,6 +6,7 @@
     "dev": "pnpm --parallel --filter @scrum-poker/worker --filter @scrum-poker/frontend dev",
     "dev:worker": "pnpm --filter @scrum-poker/worker dev",
     "dev:frontend": "pnpm --filter @scrum-poker/frontend dev",
+    "deploy:worker": "pnpm --filter @scrum-poker/worker run deploy",
     "build": "pnpm --filter @scrum-poker/shared build && pnpm --filter @scrum-poker/worker build && pnpm --filter @scrum-poker/frontend build",
     "test": "pnpm --filter @scrum-poker/shared test && pnpm --filter @scrum-poker/worker test",
     "test:shared": "pnpm --filter @scrum-poker/shared test",

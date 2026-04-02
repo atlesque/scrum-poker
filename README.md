@@ -82,10 +82,13 @@ Tests use [Vitest](https://vitest.dev/) and cover `computeVoteResults` logic and
 ### 1. Deploy the Worker
 
 ```bash
-pnpm --filter @scrum-poker/worker deploy
+pnpm deploy:worker
+
+# Or run the worker package script explicitly
+pnpm --filter @scrum-poker/worker run deploy
 ```
 
-This runs `wrangler deploy`, which publishes the Worker and provisions the `RoomDO` Durable Object to your Cloudflare account. Note the deployed URL (e.g. `https://scrum-poker-worker.<your-subdomain>.workers.dev`).
+This runs `wrangler deploy`, which publishes the Worker and provisions the `RoomDO` Durable Object to your Cloudflare account. `run` is required here because `pnpm deploy` is a built-in pnpm command and will not invoke the worker's package script. Note the deployed URL (e.g. `https://scrum-poker-worker.<your-subdomain>.workers.dev`).
 
 ### 2. Deploy the Frontend to Cloudflare Pages
 
@@ -94,10 +97,10 @@ Build the static SPA and deploy via Wrangler Pages:
 ```bash
 # Set your worker URL, then generate the static site
 NUXT_PUBLIC_WORKER_URL=https://scrum-poker-worker.<your-subdomain>.workers.dev \
-  pnpm --filter @scrum-poker/frontend generate
+  pnpm --filter @scrum-poker/frontend run generate
 
 # Deploy the generated output to Cloudflare Pages
-pnpm --filter @scrum-poker/worker exec wrangler pages deploy apps/frontend/.output/public \
+pnpm --filter @scrum-poker/worker exec wrangler pages deploy apps/frontend/dist \
   --project-name scrum-poker
 ```
 
@@ -105,8 +108,8 @@ Or connect the repository to **Cloudflare Pages** in the dashboard:
 
 | Setting | Value |
 |---|---|
-| Build command | `pnpm --filter @scrum-poker/frontend generate` |
-| Build output directory | `apps/frontend/.output/public` |
+| Build command | `pnpm --filter @scrum-poker/frontend run generate` |
+| Build output directory | `apps/frontend/dist` |
 | Environment variable | `NUXT_PUBLIC_WORKER_URL` = your Worker URL |
 
 ### CORS
